@@ -78,7 +78,8 @@ public class SweepstakesJavaFX extends Application
             
             	error.setText("");
             	
-            	// Call the validation methods here.             	
+            	// Call the validation methods here.
+				checkLuckyNum(inLuckyNum);
             
             	if (error.getText() == "")
             	{
@@ -108,9 +109,15 @@ public class SweepstakesJavaFX extends Application
    {
       
 	}
-	
+
+	//checkLuckyNum method: checks that lucky number is between 1 and 100
 	public void checkLuckyNum(String luckyNum)
    {
+	   if (luckyNum.isEmpty()) {
+		   error.setText("Lucky number required");
+	   } else if (!luckyNum.matches("^(100|[1-9][0-9]?)$")) {
+		   error.setText("Lucky number must be between 1 and 100");
+	   }
       
 	}
 	
