@@ -80,6 +80,8 @@ public class SweepstakesJavaFX extends Application
             	
             	// Call the validation methods here.
 				checkLuckyNum(inLuckyNum);
+				checkPhone(inPhone);
+				checkDob(inDob);
             
             	if (error.getText() == "")
             	{
@@ -102,7 +104,14 @@ public class SweepstakesJavaFX extends Application
 	
 	public void checkPhone(String phone)
 	{
-		
+		if (phone.isEmpty())
+        {
+            error.setText("Phone number required");
+        }
+        else if (!phone.matches("\\d{3}-\\d{3}-\\d{4}"))
+        {
+            error.setText("Phone number format: ###-###-####");
+        }
 	}
 	
 	public void checkEmail(String email)
@@ -123,9 +132,15 @@ public class SweepstakesJavaFX extends Application
 	
 	public void checkDob(String dob)
    {
-      	
+      	if (dob.isEmpty())
+        {
+            error.setText("Date of birth required");
+        }
+        else if (!dob.matches("(\\d{1}|\\d{2})/(\\d{1}|\\d{2})/\\d{4}$"))
+        {
+            error.setText("Date of birth format: ##/##/#### or #/#/####");
+        }
 	}
-   
   
 	public void resultsPage() 
    {
