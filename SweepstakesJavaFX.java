@@ -152,7 +152,7 @@ public class SweepstakesJavaFX extends Application
         {
             error.setText("Date of birth required");
         }
-        else if (!dob.matches("(\\d{1}|\\d{2})/(\\d{1}|\\d{2})/^(19|20)\\d{2}$"))
+        else if (!dob.matches("^\\d{1,2}/\\d{1,2}/(19|20)\\d{2}$"))
         {
             error.setText("Date of birth format: ##/##/#### or #/#/####");
         }
