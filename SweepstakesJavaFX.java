@@ -94,12 +94,20 @@ public class SweepstakesJavaFX extends Application
 	
 	public void checkFirst(String first)
    {
-      	
+      	if (first.isEmpty()) {
+        error.setText("First name required");
+    } else if (!first.matches("^[A-Za-z]{2,}$")) {
+        error.setText("First name invalid");
+    }
 	}
 	
 	public void checkLast(String last)
    {
-      	
+      	if (last.isEmpty()) {
+        error.setText("Last name required");
+    } else if (!last.matches("^[A-Za-z]{2,}$")) {
+        error.setText("Last name invalid");
+    }
 	}
 	
 	public void checkPhone(String phone)
