@@ -84,6 +84,7 @@ public class SweepstakesJavaFX extends Application
 				checkLuckyNum(inLuckyNum);
 				checkPhone(inPhone);
 				checkDob(inDob);
+				checkEmail(inEmail);
             
             	if (error.getText() == "")
             	{
@@ -126,7 +127,12 @@ public class SweepstakesJavaFX extends Application
 	
 	public void checkEmail(String email)
    {
-      
+      if (email.isEmpty()) {
+		error.setText("Email required");
+	  } else if (!email.matches("[0-9a-zA-Z]+@[0-9a-zA-Z]+\\.[0-9a-zA-Z]{2,}"))
+	  {
+		error.setText("Email format: username@abc.yz");
+	  }
 	}
 
 	//checkLuckyNum method: checks that lucky number is between 1 and 100
