@@ -79,6 +79,8 @@ public class SweepstakesJavaFX extends Application
             	error.setText("");
             	
             	// Call the validation methods here.
+				checkFirst(fName);
+       				checkLast(lName);
 				checkLuckyNum(inLuckyNum);
 				checkPhone(inPhone);
 				checkDob(inDob);
