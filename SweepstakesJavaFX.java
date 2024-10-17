@@ -129,7 +129,7 @@ public class SweepstakesJavaFX extends Application
    {
       if (email.isEmpty()) {
 		error.setText("Email required");
-	  } else if (!email.matches("[0-9a-zA-Z]+@[0-9a-zA-Z]+\\.[0-9a-zA-Z]{2,}"))
+	  } else if (!email.matches("[0-9a-zA-Z._-]+@[0-9a-zA-Z._-]+\\.[0-9a-zA-Z]+"))
 	  {
 		error.setText("Email format: username@abc.yz");
 	  }
